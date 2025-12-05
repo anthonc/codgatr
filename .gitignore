@@ -1,0 +1,39 @@
+# Chrome Extension
+*.crx
+*.pem
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# ZIP files (keep only source)
+*.zip
+codgatr_source.zip
+
+# Node modules (if added in future)
+node_modules/
+
+# Build outputs
+dist/
+build/
+

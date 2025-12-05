@@ -1,0 +1,95 @@
+{
+  "manifest_version": 3,
+  "name": "CodGatr",
+  "version": "2.3",
+  "description": "Smartly detects filenames and downloads code from AI chats individually or as a ZIP. Works with ChatGPT, Gemini, Claude, Grok & more.",
+  "author": "Anthon Cauper Labs",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage",
+    "webNavigation",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://chatgpt.com/*",
+    "*://gemini.google.com/*",
+    "*://grok.x.ai/*",
+    "*://claude.ai/*",
+    "*://www.bing.com/*",
+    "*://perplexity.ai/*",
+    "*://chat.deepseek.com/*",
+    "*://poe.com/*",
+    "*://huggingface.co/*",
+    "*://chat.mistral.ai/*",
+    "*://notebooklm.google.com/*",
+    "*://chat.openai.com/*",
+    "*://bard.google.com/*",
+    "*://grok.x.com/*",
+    "*://x.com/i/grok*",
+    "*://anthropic.com/*",
+    "*://you.com/*",
+    "*://copilot.microsoft.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CodGatr - AI Code Downloader",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*",
+        "*://gemini.google.com/*",
+        "*://grok.x.ai/*",
+        "*://claude.ai/*",
+        "*://www.bing.com/*",
+        "*://perplexity.ai/*",
+        "*://chat.deepseek.com/*",
+        "*://poe.com/*",
+        "*://huggingface.co/*",
+        "*://chat.mistral.ai/*",
+        "*://notebooklm.google.com/*",
+        "*://chat.openai.com/*",
+        "*://bard.google.com/*",
+        "*://grok.x.com/*",
+        "*://x.com/i/grok*",
+        "*://anthropic.com/*",
+        "*://you.com/*",
+        "*://copilot.microsoft.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "injected.css"
+      ],
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png",
+    "256": "icons/icon-256.png",
+    "512": "icons/icon-512.png"
+  }
+}

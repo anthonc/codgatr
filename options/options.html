@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodGatr Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">🐊</div>
+          <div>
+            <h1>CodGatr Settings</h1>
+            <p class="subtitle">Configure your AI code downloader</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="settings-section">
+        <h2>Detection Settings</h2>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="auto-detect">Auto-detect code blocks</label>
+            <p class="setting-description">Automatically scan and detect code blocks on AI chat pages</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="auto-detect" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="stream-detect">Detect streaming code</label>
+            <p class="setting-description">Detect code as it's being generated (real-time detection)</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="stream-detect" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Download Settings</h2>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="ask-location">Always ask where to save</label>
+            <p class="setting-description">Show file save dialog for each download</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="ask-location" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="remove-line-numbers">Remove line numbers (Gemini)</label>
+            <p class="setting-description">Automatically remove line numbers from Gemini code blocks</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="remove-line-numbers" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>File Naming</h2>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="smart-naming">Smart filename detection</label>
+            <p class="setting-description">Automatically detect filenames from AI conversations</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="smart-naming" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="default-extension">Default file extension</label>
+            <p class="setting-description">Extension to use when filename cannot be detected</p>
+          </div>
+          <select id="default-extension" class="select-input">
+            <option value="txt">.txt (Plain Text)</option>
+            <option value="js">.js (JavaScript)</option>
+            <option value="py">.py (Python)</option>
+            <option value="html">.html (HTML)</option>
+            <option value="css">.css (CSS)</option>
+            <option value="json">.json (JSON)</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Advanced Settings</h2>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="dedup-content">Deduplicate identical code</label>
+            <p>Hide duplicate code snippets (same content, different names)</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="dedup-content" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="auto-extension">Auto-assign extensions</label>
+            <p>Change .txt to .js/.py/etc. based on code type</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="auto-extension" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="detect-lang">Language detection</label>
+            <p>Detect code language for icons/labels</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="detect-lang" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="min-content">Min content length</label>
+            <p>Ignore snippets shorter than (chars)</p>
+          </div>
+          <input type="range" id="min-content" min="100" max="2000" value="200" class="range-input">
+          <span id="min-content-value" class="range-value">200 chars</span>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Supported Platforms</h2>
+        <div class="platforms-list">
+          <div class="platform-item">
+            <span class="platform-name">✅ Gemini</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ ChatGPT</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ Claude</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ Grok</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ Perplexity</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ DeepSeek</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ Poe</span>
+            <span class="platform-status">Active</span>
+          </div>
+          <div class="platform-item">
+            <span class="platform-name">✅ Copilot</span>
+            <span class="platform-status">Active</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="save-btn" class="save-btn">Save Settings</button>
+        <button id="reset-btn" class="reset-btn">Reset to Defaults</button>
+      </div>
+
+      <div class="actions secondary-actions">
+        <button id="export-btn" class="export-btn">📤 Export Settings</button>
+        <button id="import-btn" class="import-btn">📥 Import Settings</button>
+        <input type="file" id="import-file" accept=".json" style="display:none;">
+      </div>
+
+      <section class="settings-section">
+        <h2>Stats</h2>
+        <div id="stats-list"></div>
+      </section>
+
+      <div id="status-message" class="status-message"></div>
+    </main>
+
+    <footer>
+      <p>Developed by <a href="https://labs.anthoncauper.com" target="_blank" rel="noopener noreferrer">Anthon Cauper Labs</a></p>
+      <p class="copyright">© All rights reserved</p>
+      <p class="donate-link">
+        <a href="https://buymeacoffee.com/anthoncauper" target="_blank" rel="noopener noreferrer" style="color: #FFDD00; text-decoration: none;">
+          ☕ Support the Project
+        </a>
+      </p>
+    </footer>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
